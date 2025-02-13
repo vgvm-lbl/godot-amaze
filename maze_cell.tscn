@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsat6mtw2snid"]
+
+[ext_resource type="Script" path="res://maze_cell.gd" id="1_lkfg3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wr5vm"]
+size = Vector3(0.2, 3, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_42w4g"]
+size = Vector3(0.2, 3, 1.5)
+
+[node name="MazeCell" type="Node3D" node_paths=PackedStringArray("up", "down", "left", "right")]
+script = ExtResource("1_lkfg3")
+up = NodePath("Up")
+down = NodePath("Down")
+left = NodePath("Left")
+right = NodePath("Right")
+
+[node name="Up" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.75)
+mesh = SubResource("BoxMesh_wr5vm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Up"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Up/StaticBody3D"]
+shape = SubResource("BoxShape3D_42w4g")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Up"]
+vertices = PackedVector3Array(-0.1, 0, -0.75, 0.1, 0, -0.75, 0.1, 0, 0.75, -0.1, 0, 0.75)
+
+[node name="Down" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.75)
+mesh = SubResource("BoxMesh_wr5vm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Down"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Down/StaticBody3D"]
+shape = SubResource("BoxShape3D_42w4g")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Down"]
+vertices = PackedVector3Array(-0.1, 0, -0.75, 0.1, 0, -0.75, 0.1, 0, 0.75, -0.1, 0, 0.75)
+
+[node name="Left" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.75, 1.5, 0)
+mesh = SubResource("BoxMesh_wr5vm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Left"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Left/StaticBody3D"]
+shape = SubResource("BoxShape3D_42w4g")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Left"]
+vertices = PackedVector3Array(-0.75, 0, -0.1, 0.75, 0, -0.1, 0.75, 0, 0.1, -0.75, 0, 0.1)
+
+[node name="Right" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.75, 1.5, 0)
+mesh = SubResource("BoxMesh_wr5vm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Right"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Right/StaticBody3D"]
+shape = SubResource("BoxShape3D_42w4g")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Right"]
+vertices = PackedVector3Array(-0.75, 0, -0.1, 0.75, 0, -0.1, 0.75, 0, 0.1, -0.75, 0, 0.1)

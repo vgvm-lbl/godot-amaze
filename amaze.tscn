@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ih7m4glgk3gh"]
+
+[ext_resource type="Script" path="res://amaze.gd" id="1_hp4oh"]
+[ext_resource type="PackedScene" uid="uid://dsat6mtw2snid" path="res://maze_cell.tscn" id="2_d5bw6"]
+
+[node name="Amaze" type="Node3D"]
+script = ExtResource("1_hp4oh")
+maze_celler = ExtResource("2_d5bw6")
