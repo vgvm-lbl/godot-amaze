@@ -13,4 +13,5 @@ config_version=5
 config/name="amaze"
 run/main_scene="res://demo.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/image="res://amaze.png"
 config/icon="res://icon.svg"

@@ -5,3 +5,5 @@ Ported from
 [Vidar 'koala_man' Holen](http://www.vidarholen.net)
 
 There's already a Godot add-on in the AssetLib that's probably better, but jsut had to scratch the itch.
+
+<img src="amaze.png">
